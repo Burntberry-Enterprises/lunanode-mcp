@@ -20,6 +20,26 @@ Set these environment variables:
 
 Read-tier tools are always enabled. Enabling writes does not imply deletes — each tier is gated independently.
 
+### Using a .env file
+
+Instead of putting credentials in your MCP client config, you can keep them in a `.env` file and load it with Node's built-in `--env-file` flag (Node 20.6+). Copy `.env.example` to `.env` (git-ignored), fill in your values, and restrict access with `chmod 600 .env`. Full-line and inline `#` comments are supported.
+
+```json
+{
+  "mcpServers": {
+    "lunanode": {
+      "command": "node",
+      "args": [
+        "--env-file=/path/to/lunanode-mcp/.env",
+        "/path/to/lunanode-mcp/dist/index.js"
+      ]
+    }
+  }
+}
+```
+
+The smoke test can use the same file: `npx tsx --env-file=.env scripts/smoke.ts`
+
 ## Client setup
 
 Example configuration for Claude Code / Claude Desktop:

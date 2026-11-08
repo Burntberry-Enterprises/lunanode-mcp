@@ -49,7 +49,7 @@ Example configuration for Claude Code / Claude Desktop:
   "mcpServers": {
     "lunanode": {
       "command": "npx",
-      "args": ["-y", "github:Burntberry/lunanode-mcp"],
+      "args": ["-y", "github:Burntberry-Enterprises/lunanode-mcp"],
       "env": {
         "LUNANODE_API_ID": "your-api-id",
         "LUNANODE_API_KEY": "your-128-char-api-key",
